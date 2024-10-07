@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Implementation of pascal's triangle
+"""
+
+
 def pascal_triangle(n):
     """
     Given a non-negative integer n, generate the first n rows of Pascal's triangle.
