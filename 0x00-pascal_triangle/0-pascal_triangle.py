@@ -4,7 +4,6 @@
 Implementation of pascal's triangle
 """
 
-
 def pascal_triangle(n):
     """
     Given a non-negative integer n,
