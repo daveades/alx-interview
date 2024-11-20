@@ -19,6 +19,9 @@ def canUnlockAll(boxes):
 	- The first box boxes[0] is unlocked
 	- Return True if all boxes can be opened, else return False
 	"""
+	if not boxes:
+		return False
+		
 	opened_boxes = {0}
 
 	boxes_to_check = [0]
