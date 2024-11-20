@@ -26,7 +26,7 @@ def canUnlockAll(boxes):
 
 	boxes_to_check = [0]
 
-	while not boxes_to_check:
+	while boxes_to_check:
 		current_box = boxes_to_check.pop()
 
 		for key in boxes[current_box]:
