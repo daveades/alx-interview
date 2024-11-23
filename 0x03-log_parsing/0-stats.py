@@ -50,7 +50,7 @@ def parse_log():
     except (KeyboardInterrupt, EOFError):
         print_stats(total_size, status_counts)
     finally:
-        print_stats(total_size, status_count)
+        print_stats(total_size, status_counts)
 
 if __name__ == "__main__":
     parse_log()
