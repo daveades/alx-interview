@@ -28,21 +28,26 @@ def parse_log():
     try:
         for line in sys.stdin:
             # Regex to match log format
-            match = re.match(
-                r'^(\d+\.\d+\.\d+\.\d+) - \[.*\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)$',
-                line.strip()
+            match = re.search(
+               r'(?P<ip>\S+) - \[.*\] "GET /projects/260 HTTP/1.1" (?P<status>\S+) (?P<size>\S+)',
+               line.strip()
             )
 
             if match:
-                status = int(match.group(2))
-                file_size = int(match.group(3))
+                status = match.group("status")
+                file_size = match.group("size")
 
                 # Track metrics
-                total_size += file_size
-                if status not in status_counts:
-                    status_counts[status] = 0
-                status_counts[status] += 1
-                line_count += 1
+                if file_size.isdigit():
+                    total_size += int(file_size)
+
+                if status.isdigit():
+                    status = int(status)
+                    if status not in status_counts:
+                        status_counts[status] = 0
+                    status_counts[status] += 1
+
+                    line_count += 1
 
             # Print stats every 10 lines
             if line_count % 10 == 0:
