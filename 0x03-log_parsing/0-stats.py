@@ -7,6 +7,7 @@ Log Parsing
 import sys
 import re
 
+
 def print_stats(total_size, status_counts):
     """
     Print stats
@@ -42,7 +43,7 @@ def parse_log():
                     status_counts[status] = 0
                 status_counts[status] += 1
                 line_count += 1
-            
+
             # Print stats every 10 lines
             if line_count % 10 == 0:
                 print_stats(total_size, status_counts)
@@ -51,6 +52,7 @@ def parse_log():
         print_stats(total_size, status_counts)
     finally:
         print_stats(total_size, status_counts)
+
 
 if __name__ == "__main__":
     parse_log()
