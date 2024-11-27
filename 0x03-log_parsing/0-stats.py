@@ -29,7 +29,7 @@ def parse_log():
         for line in sys.stdin:
             # Regex to match log format
             match = re.search(
-               r'(?P<ip>\S+) - \[.*\] "GET /projects/260 HTTP/1.1" (?P<status>\S+) (?P<size>\S+)',
+               r'(?P<ip>\S+)-?\s*\[.*\] "GET /projects/260 HTTP/1.1" (?P<status>\S+) (?P<size>\S+)',
                line.strip()
             )
 
