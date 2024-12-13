@@ -7,7 +7,7 @@
 
 def island_perimeter(grid):
     """
-    Calculate perimeter of island where 1 represents land and 0 represents water
+    Calculate island perimeter where 1 represents land and 0 represents water
     Returns: perimeter of the island
     """
     perimeter = 0
