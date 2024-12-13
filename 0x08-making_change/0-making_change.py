@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 
 """
-0x08 Make change
+0x08 Make changes
+
+Calculate the minimum number of cins to make a specific total amount
 """
+
 
 def makeChange(coins, total):
     """
