@@ -14,6 +14,7 @@ def is_prime(n):
             return False
     return True
 
+
 def get_primes_up_to(n):
     """Get all prime numbers up to n"""
     primes = []
@@ -21,6 +22,7 @@ def get_primes_up_to(n):
         if is_prime(i):
             primes.append(i)
     return primes
+
 
 def play_round(n):
     """Simulate a single round"""
@@ -33,6 +35,7 @@ def play_round(n):
     # If even number of moves possible, Ben wins
     # If odd number of moves possible, Maria wins
     return 'Ben' if len(primes) % 2 == 0 else 'Maria'
+
 
 def isWinner(x, nums):
     """Determine winner of Prime Game"""
