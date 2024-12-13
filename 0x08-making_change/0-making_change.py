@@ -14,7 +14,7 @@ def makeChange(coins, total):
     total (int): The total amount of money to make.
 
     Returns:
-    int: The minimum number of coins needed to make the total, or -1 if not possible.
+    int: The min num of coins needed to make the total, or -1 if not possible.
     """
     if total < 0:
         return 0
