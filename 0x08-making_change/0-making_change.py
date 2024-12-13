@@ -4,6 +4,7 @@
 0x08-making_change
 """
 
+
 def makeChange(coins, total):
     """
     Determine the minimum number of coins needed to make a given total.
@@ -13,7 +14,7 @@ def makeChange(coins, total):
     total (int): The total amount of money to make.
 
     Returns:
-    int: The minimum number of coins needed to make the total, or -1 if it is not possible.
+    int: The minimum number of coins needed to make the total, or -1 if not possible.
     """
     if total < 0:
         return 0
