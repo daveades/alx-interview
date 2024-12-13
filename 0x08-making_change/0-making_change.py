@@ -4,6 +4,7 @@
 0x08 Make change
 """
 
+
 def makeChange(coins, total):
     """
     Calculate the minimum number of coins needed to make a specific total amount.
