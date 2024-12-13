@@ -7,21 +7,29 @@
 
 def makeChange(coins, total):
     """
-    Determine the minimum number of coins needed to make a given total.
+    Determine the minimum number of coins needed to meet a given amount `total`.
 
-    Parameters:
-    coins (list): A list of coin denominations.
-    total (int): The total amount of money to make.
+    Args:
+        coins (list): A list of the values of the coins available.
+        total (int): The total amount of money to make change for.
 
     Returns:
-    int: The min num of coins needed to make the total, or -1 if not possible.
+        int: The minimum number of coins needed to make the change for the given `total`.
+             If the change cannot be made with the given coins, return -1.
     """
-    if total < 0:
+    if total <= 0:
         return 0
-    min_coins = [float('inf')] * (total + 1)
-    min_coins[0] = 0
-    for coin in coins:
-        for i in range(coin, total + 1):
-            min_coins[i] = min(min_coins[i], min_coins[i - coin] + 1)
-    result = min_coins[total]
-    return result if result != float('inf') else -1
+    coins = sorted(coins, reverse=True)
+
+    def helper(t):
+        if t == 0:
+            return 0
+        min_coins = float('inf')
+        for coin in coins:
+            if t >= coin:
+                res = helper(t - coin)
+                if res != -1 and res + 1 < min_coins:
+                    min_coins = res + 1
+        return min_coins if min_coins != float('inf') else -1
+
+    return helper(total)
