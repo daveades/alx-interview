@@ -11,6 +11,7 @@ def isWinner(x, nums):
         return None
 
     # Pre-calculate primes up to max number for efficiency
+    # Sieve of Eratosthenes
     max_num = max(nums)
     sieve = [True] * (max_num + 1)
     sieve[0] = sieve[1] = False
